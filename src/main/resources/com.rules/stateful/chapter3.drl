@@ -1,0 +1,19 @@
+package com.rules.stateful
+
+import com.rules.model.Car
+
+rule "chapter3_rule1"
+agenda-group "car_discount_rule"
+when
+    $car : Car(person.age > 60)
+then
+    $car.setDiscount(80);
+end
+
+rule "chapter3_rule2"
+agenda-group "car_discount_rule"
+when
+    $car : Car(person.age <= 60)
+then
+    $car.setDiscount(90);
+end

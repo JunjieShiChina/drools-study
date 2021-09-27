@@ -1,0 +1,8 @@
+package com.rules.flowRuleGroup
+
+rule "flow-rule-group-test1"
+ruleflow-group "flow-rule-group1"
+when
+then
+    System.out.println("flow-rule-group-test1 executed");
+end

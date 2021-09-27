@@ -1,0 +1,25 @@
+package com.rules.salienceTest
+
+import com.rules.model.Person
+
+rule salience1
+salience 5
+when
+then
+ System.out.println("salience1 executed");
+end
+
+rule salience2
+salience sal
+when
+    $p : Person(sal : age)
+then
+ System.out.println("salience2 executed");
+end
+
+rule salience3
+salience 9
+when
+then
+ System.out.println("salience3 executed");
+end

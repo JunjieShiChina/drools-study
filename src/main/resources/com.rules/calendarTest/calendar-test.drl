@@ -1,0 +1,8 @@
+package com.rules.calendarTest
+
+rule "calendar-test"
+calendars "weekDayNotInclud3"
+when
+then
+    System.out.println("calendar-test executed");
+end

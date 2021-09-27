@@ -1,0 +1,14 @@
+package com.rules.noloop
+
+import com.rules.model.Person
+
+rule "no-loop-test"
+//no-loop true
+lock-on-active true
+when
+    $p : Person(age > 30)
+then
+    $p.setAge(31);
+    System.out.println($p.getAge());
+    update($p)
+end

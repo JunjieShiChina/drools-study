@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="rules-stateful" packages="com.rules.stateful">
+        <ksession name="test-rules" default="true"/>
+    </kbase>
+    <kbase name="rules-stateless" packages="com.rules.stateless">
+        <ksession name="stateless-kie-session-rule-session" type="stateless"/>
+    </kbase>
+    <kbase packages="com.rules.noloop">
+        <ksession name="noloop-test-session" />
+    </kbase>
+    <kbase packages="com.rules.flowRuleGroup">
+        <ksession name="rule-flow-test-session" />
+    </kbase>
+    <kbase packages="com.rules.salienceTest">
+        <ksession name="salience-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.activationGroup">
+        <ksession name="activationGroup-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.dateEffective">
+        <ksession name="dateEffective-test-Session"/>
+    </kbase>
+    <kbase packages="com.rules.timerTest">
+        <ksession name="timerTest-test-Session"/>
+    </kbase>
+    <kbase packages="com.rules.calendarTest">
+        <ksession name="calendar-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.lhsTest">
+        <ksession name="lhs-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.modifyTest">
+        <ksession name="modify-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.chapter32">
+        <ksession name="chapter32-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.queryTest">
+        <ksession name="query-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.functionTest">
+        <ksession name="function-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.globalTest">
+        <ksession name="global-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.declareTest">
+        <ksession name="declare-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.enumTest">
+        <ksession name="enum-test-session"/>
+    </kbase>
+    <kbase name="facttype-base" packages="com.rules.factTypeTest">
+        <ksession name="factType-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.metaTest">
+        <ksession name="meta-test-session"/>
+    </kbase>
+    <kbase packages="com.rules.dicisionTableTest">
+        <ksession name="dicisionTable-test-session"/>
+    </kbase>
+</kmodule>

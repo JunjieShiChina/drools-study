@@ -1,0 +1,15 @@
+package com.rules.queryTest
+
+import com.rules.model.Person
+
+rule "person-test"
+when
+    Person(age == 21)
+then
+    System.out.println("person-test executed");
+end
+
+query "person-query-by-age"(Integer pAge)
+    $p : Person(age > pAge)
+end
+

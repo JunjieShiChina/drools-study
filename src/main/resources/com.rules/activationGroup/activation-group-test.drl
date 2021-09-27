@@ -1,0 +1,16 @@
+package com.rules.activationGroup
+
+rule "activation-group-test1"
+activation-group "activation-group"
+when
+then
+    System.out.println("activation-group-test1 executed");
+end
+
+rule "activation-group-test2"
+activation-group "activation-group"
+salience 1
+when
+then
+    System.out.println("activation-group-test2 executed");
+end

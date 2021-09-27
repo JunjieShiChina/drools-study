@@ -1,0 +1,16 @@
+package com.rules.dateEffective
+
+rule "date-effective-test1"
+date-effective "2021-09-22 11:20:33"
+date-expires "2021-09-22 11:21:33"
+when
+then
+    System.out.println("date-effective-test1 executed");
+end
+
+rule "date-effective-test2"
+date-effective "2021-09-22 09:20:33"
+when
+then
+    System.out.println("date-effective-test2 executed");
+end

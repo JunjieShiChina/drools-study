@@ -1,0 +1,9 @@
+package com.rules.stateful
+
+rule "Test jdk version"
+agenda-group "Test_jdk_version"
+    when
+        eval(true)
+    then
+        System.out.println("Test jdk version");
+    end

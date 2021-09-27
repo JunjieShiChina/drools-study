@@ -1,0 +1,15 @@
+package com.rules.lhsTest
+
+import com.rules.model.ListMapFact
+import com.rules.model.Person
+
+rule "lhs-test"
+when
+    ListMapFact($p: personList)
+    $person: Person(age > 5) from $p
+    ListMapFact($pl: personListMap["personList"])
+
+then
+    System.out.println($person.getAge());
+//    System.out.println($pl);
+end

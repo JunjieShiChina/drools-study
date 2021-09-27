@@ -1,0 +1,31 @@
+package com.rules.declareTest
+
+rule "declare-test"
+salience 2
+no-loop
+when
+
+then
+    System.out.println("declare-test executed");
+    Cat cat = new Cat();
+    cat.setAge(18);
+    cat.setName("tom");
+    insert(cat);
+end
+
+rule "cat-test"
+salience 1
+when
+    $c : Cat(age == 18)
+then
+    System.out.println("cat-test $c:" + $c.getAge());
+end
+
+declare Cat
+    age:Integer
+    name:String
+end
+
+query "cat-q"
+    $c : Cat(age == 18)
+end

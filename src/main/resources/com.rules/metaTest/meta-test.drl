@@ -1,0 +1,26 @@
+package com.rules.metaTest
+import com.rules.metaTest.Mazida
+
+rule "meta-test"
+salience 2
+when
+    com.rules.model.Car(discount == 60)
+then
+    System.out.println("meta-test-excuted");
+    Mazida mazida = new Mazida("6lun");
+    insert(mazida);
+end
+
+rule "meta-test2"
+salience 1
+when
+    Mazida(fadongji == "6lun")
+then
+    System.out.println("meta-test2-excuted");
+end
+
+declare Mazida extends com.rules.model.Car
+    @author("junjie")
+    fadongji : String @key
+    other : String
+end

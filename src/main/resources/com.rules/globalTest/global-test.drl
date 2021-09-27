@@ -1,0 +1,13 @@
+package com.rules.globalTest
+
+global com.rules.service.impl.TestServiceImpl testService1;
+global com.rules.service.TestService testService2;
+
+rule "global-test"
+when
+then
+    System.out.println("global-test executed");
+    testService1.test1("drl test1 param");
+    String result = testService2.test2("drl test2 param");
+    System.out.println(result);
+end

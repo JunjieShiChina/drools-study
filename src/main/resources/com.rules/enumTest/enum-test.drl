@@ -1,0 +1,16 @@
+package com.rules.enumTest
+
+import com.rules.model.Person
+
+rule "enum-test"
+when
+    Person(age == TplStatusEnum.GIVE_UP.code)
+then
+    System.out.println("enum-test-executed");
+end
+
+declare enum TplStatusEnum
+    GIVE_UP(0, "废弃");
+    code : Integer
+    value : String
+end

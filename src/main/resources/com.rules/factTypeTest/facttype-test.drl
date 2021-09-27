@@ -1,0 +1,17 @@
+package com.rules.factTypeTest
+
+rule "fact-type-test"
+when
+    Animal(age == 3)
+then
+    System.out.println("animal age is 3");
+end
+
+declare Animal
+    age : Integer
+end
+
+declare Dog extends Animal
+    name : String
+    birthDay : java.util.Date
+end

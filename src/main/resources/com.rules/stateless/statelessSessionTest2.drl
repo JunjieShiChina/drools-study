@@ -1,0 +1,10 @@
+package com.rules.stateless
+
+import com.rules.model.Car
+
+rule "stateless-kie-session-rule2"
+    when
+        $car : Car()
+    then
+        System.out.println($car.getDiscount());
+    end

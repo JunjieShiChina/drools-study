@@ -1,0 +1,11 @@
+package com.rules.functionTest
+
+rule "function-test"
+when
+then
+     System.out.println(helloFunc("123"));
+end
+
+function String helloFunc(String param) {
+    return "helloFunc" + param;
+}
