@@ -1,0 +1,7 @@
+package com.rules.kieHelper
+
+rule "kieHelper-test2"
+when
+then
+    System.out.println("kieHelper-test2 executed");
+end

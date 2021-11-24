@@ -15,6 +15,28 @@
         <drools-version>7.0.0.Final</drools-version>
     </properties>
 
+    <distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <url>http://nexus.enncloud.cn/repository/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://nexus.enncloud.cn/repository/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>maven-releases</id>
+            <url>http://nexus.enncloud.cn/repository/releases/</url>
+        </repository>
+        <repository>
+            <id>maven-snapshots</id>
+            <url>http://nexus.enncloud.cn/repository/snapshots/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.drools</groupId>
@@ -65,6 +87,33 @@
             <version>1.2.60</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax.security.jacc</groupId>
+            <artifactId>javax.security.jacc-api</artifactId>
+            <version>1.5</version>
+        </dependency>
+
+
     </dependencies>
+
+    <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+        </plugin>
+
+        <!-- add TestableMock plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+                <forkNode implementation="org.apache.maven.plugin.surefire.extensions.SurefireForkNodeFactory"/>
+                <argLine> -javaagent:${settings.localRepository}/com/alibaba/testable/testable-agent/${testable.version}/testable-agent-${testable.version}.jar</argLine>
+            </configuration>
+        </plugin>
+
+    </plugins>
+    </build>
 
 </project>

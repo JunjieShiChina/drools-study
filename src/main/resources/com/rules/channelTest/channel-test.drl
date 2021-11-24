@@ -1,0 +1,10 @@
+package com.rules.channelTest
+
+import com.rules.model.Person
+
+rule "channel-test"
+when
+    $p : Person()
+then
+    channels["channel-service"].send($p);
+end

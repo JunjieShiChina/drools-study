@@ -4,7 +4,8 @@ import com.rules.model.Person
 
 rule "person-test"
 when
-    Person(age == 21)
+    $p1 : Person(age == 21)
+    or $p2 : Person(age == 19)
 then
     System.out.println("person-test executed");
 end

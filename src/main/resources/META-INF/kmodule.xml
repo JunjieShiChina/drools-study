@@ -60,4 +60,7 @@
     <kbase packages="com.rules.dicisionTableTest">
         <ksession name="dicisionTable-test-session"/>
     </kbase>
+    <kbase packages="com.rules.channelTest">
+        <ksession name="channel-test-session"/>
+    </kbase>
 </kmodule>
